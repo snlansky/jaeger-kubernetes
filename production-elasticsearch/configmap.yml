@@ -23,7 +23,7 @@ data:
   span-storage-type: elasticsearch
   collector: |
     es:
-      server-urls: http://elasticsearch:9200
+      server-urls: http://10.244.4.153:9203
       username: elastic
       password: changeme
     collector:
@@ -31,7 +31,7 @@ data:
         http-port: 9411
   query: |
     es:
-      server-urls: http://elasticsearch:9200
+      server-urls: http://10.244.4.153:9203
       username: elastic
       password: changeme
   agent: |
