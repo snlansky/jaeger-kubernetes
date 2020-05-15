@@ -1,22 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: __SERVICE_NAME__
-  namespace: __NAMESPACE__
+  name: kchain-kibana
+  namespace: kbcs
   labels:
-    app: __APP_LABEL__
+    app: kchain-kibana
 
 spec:
   type: NodePort
   ports:
     - name: normal
       protocol: TCP
-      port: 8080
-      targetPort: 8080
-    - name: rpc
-      protocol: TCP
-      port: 8081
-      targetPort: 8081
+      port: 5601
+      targetPort: 5601
+
 
   selector:
-    app: __APP_LABEL__
+    app: kchain-kibana

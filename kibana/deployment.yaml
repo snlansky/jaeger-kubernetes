@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: __DEPLOY_NAME__
-  namespace: __NAMESPACE__
+  name: kchain-kibana
+  namespace: kbcs
   labels:
-    app: __APP_LABEL__
+    app: kchain-kibana
 spec:
   selector:
     matchLabels:
-      app: __APP_LABEL__
+      app: kchain-kibana
   replicas: 1
   revisionHistoryLimit: 2
   strategy:
@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       labels:
-        app: __APP_LABEL__
+        app: kchain-kibana
     spec:
       containers:
         - image: docker.elastic.co/kibana/kibana:6.6.0
