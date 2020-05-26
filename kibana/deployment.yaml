@@ -21,7 +21,7 @@ spec:
         app: kchain-kibana
     spec:
       containers:
-        - image: docker.elastic.co/kibana/kibana:6.6.0
+        - image: docker.elastic.co/kibana/kibana:6.8.8
           name: kibana
           env:
             - name: ELASTICSEARCH_URL
