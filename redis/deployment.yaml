@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kchain-redis
+  namespace: kbcs
+  labels:
+    app: kchain-redis
+spec:
+  selector:
+    matchLabels:
+      app: kchain-redis
+  replicas: 1
+  revisionHistoryLimit: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: kchain-redis
+    spec:
+      containers:
+        - image: harbor-k8s.kingdeeresearch.com/kchain/kbcs-redis:latest
+          name: redis
+          command: ["redis-server", "--requirepass", "mypass"]
+          ports:
+            - containerPort: 6379
