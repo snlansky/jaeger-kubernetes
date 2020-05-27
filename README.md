@@ -119,7 +119,7 @@ Assuming that your application is named `myapp` and the image is for it is `myna
           name: myapp
           ports:
           - containerPort: 8080
-        - image: jaegertracing/jaeger-agent
+        - image: jaegertracing/jaeger-agent:1.12
           name: jaeger-agent
           ports:
           - containerPort: 5775
@@ -130,7 +130,7 @@ Assuming that your application is named `myapp` and the image is for it is `myna
             protocol: UDP
           - containerPort: 5778
             protocol: TCP
-          args: ["--collector.host-port=jaeger-collector.jaeger-infra.svc:14267"]
+          args: ["--collector.host-port=jaeger-collector.default:14267"]
 ```
 
 The Jaeger Agent will then be available to your application at `localhost:5775`/`localhost:6831`/`localhost:6832`/`localhost:5778`.

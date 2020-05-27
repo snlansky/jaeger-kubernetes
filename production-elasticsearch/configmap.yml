@@ -23,17 +23,17 @@ data:
   span-storage-type: elasticsearch
   collector: |
     es:
-      server-urls: http://10.244.4.153:9203
-      username: elastic
-      password: changeme
+      server-urls: http://172.20.177.44:9200
+      username: kduser
+      password: TdwYH9-3@q6){zu5
     collector:
       zipkin:
         http-port: 9411
   query: |
     es:
-      server-urls: http://10.244.4.153:9203
-      username: elastic
-      password: changeme
+      server-urls: http://172.20.177.44:9200
+      username: kduser
+      password: TdwYH9-3@q6){zu5
   agent: |
     collector:
       host-port: "jaeger-collector:14267"
